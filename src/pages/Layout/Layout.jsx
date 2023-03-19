@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Box } from '@mui/material';
 
 const theme = createTheme({
   palette: {
@@ -27,9 +28,17 @@ const theme = createTheme({
 const Layout = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Navbar />
-      <Outlet />
-      {/* <Footer /> */}
+      <Box
+        sx={{
+          minHeight: '100vh',
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <Navbar />
+        <Outlet />
+      </Box>
     </ThemeProvider>
   );
 };

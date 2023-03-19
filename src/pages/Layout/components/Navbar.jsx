@@ -121,7 +121,9 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <MenuItem key={link.name} onClick={handleCloseNavMenu}>
                   <NavLink to={link.path}>
-                    <Typography textAlign="center">{link.name}</Typography>
+                    <Typography textAlign="center" sx={{ color: 'black' }}>
+                      {link.name}
+                    </Typography>
                   </NavLink>
                 </MenuItem>
               ))}

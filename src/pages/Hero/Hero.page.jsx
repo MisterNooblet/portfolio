@@ -1,16 +1,29 @@
 import { Box, Container, Typography } from '@mui/material';
 import React from 'react';
+import SocialsList from '../../components/SocialsList';
 import backgroundImg from './assets/hero-bg-2.jpg';
+
 const Hero = () => {
   return (
     <Box
-      component={'section'}
+      component={'div'}
       sx={{
-        background: `url('${backgroundImg}') center center/cover no-repeat`,
+        background: `url('${backgroundImg}') center center no-repeat`,
+        backgroundSize: 'cover',
         flexGrow: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
       }}
     >
-      <Container>
+      <Container
+        sx={{
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+        }}
+      >
         <Box
           component={'div'}
           sx={{
@@ -33,6 +46,16 @@ const Hero = () => {
               Artyom Ribakov
             </Box>
           </Typography>
+          <Typography
+            component={'p'}
+            variant={'p'}
+            textAlign="center"
+            margin={'2rem 0'}
+          >
+            I am a Fullstack Developer.
+            <br /> This page is about what i like and who i am..
+          </Typography>
+          <SocialsList />
         </Box>
       </Container>
     </Box>
