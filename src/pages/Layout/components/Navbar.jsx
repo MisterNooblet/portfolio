@@ -81,6 +81,7 @@ const Navbar = () => {
                 fontFamily: 'monospace',
                 fontWeight: 700,
                 letterSpacing: '.3rem',
+                fontSize: '2vmin',
                 color: 'inherit',
                 textDecoration: 'none',
               }}
@@ -167,7 +168,7 @@ const Navbar = () => {
           <Box
             sx={{
               flexGrow: 0,
-              flexBasis: '300px',
+              flexBasis: { md: '300px', xs: '0px' },
               display: 'flex',
               justifyContent: 'end',
             }}
@@ -176,7 +177,11 @@ const Navbar = () => {
               <Box component={'a'} href={'tel:0546477125'}>
                 <IconButton sx={{ p: 0, color: 'white' }}>
                   <BsTelephoneOutbound />
-                  <Typography sx={{ ml: 1 }}>054-6477125</Typography>
+                  <Typography
+                    sx={{ ml: 1, display: { xs: 'none', md: 'inline' } }}
+                  >
+                    054-6477125
+                  </Typography>
                 </IconButton>
               </Box>
             </Tooltip>
