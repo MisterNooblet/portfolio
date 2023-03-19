@@ -22,7 +22,12 @@ const Hero = () => {
             height: '100%',
           }}
         >
-          <Typography component={'h1'} variant="h2" fontWeight={700}>
+          <Typography
+            component={'h1'}
+            variant="h2"
+            fontWeight={700}
+            sx={{ fontSize: '8vmin' }}
+          >
             Hi, I am{' '}
             <Box component={'span'} sx={{ color: 'text.secondary' }}>
               Artyom Ribakov

@@ -57,29 +57,37 @@ const Navbar = () => {
   return (
     <AppBar position="static" sx={{ backgroundColor: 'black' }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{ backgroundColor: 'black' }}>
-          <Box
-            component={'img'}
-            src={logo}
-            alt={'logo'}
-            sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, width: '3rem' }}
-          />
-          <Typography
-            variant="h6"
-            noWrap
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            ARTYOM RIBAKOV
-          </Typography>
-
+        <Toolbar
+          disableGutters
+          sx={{
+            backgroundColor: 'black',
+            display: 'flex',
+          }}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box
+              component={'img'}
+              src={logo}
+              alt={'logo'}
+              sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, width: '3rem' }}
+            />
+            <Typography
+              variant="h6"
+              noWrap
+              sx={{
+                mr: 2,
+                flexBasis: '300px',
+                display: { xs: 'none', md: 'flex' },
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              ARTYOM RIBAKOV
+            </Typography>
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -156,7 +164,14 @@ const Navbar = () => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box
+            sx={{
+              flexGrow: 0,
+              flexBasis: '300px',
+              display: 'flex',
+              justifyContent: 'end',
+            }}
+          >
             <Tooltip title="Call me">
               <Box component={'a'} href={'tel:0546477125'}>
                 <IconButton sx={{ p: 0, color: 'white' }}>
