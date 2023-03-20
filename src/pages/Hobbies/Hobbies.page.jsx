@@ -1,7 +1,12 @@
 import React from 'react';
+import PageWrapper from '../components/PageWrapper';
 
 const Hobbies = () => {
-  return <div>Hobbies</div>;
+  return (
+    <PageWrapper>
+      <div>Hobbies</div>
+    </PageWrapper>
+  );
 };
 
 export default Hobbies;

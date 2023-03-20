@@ -35,7 +35,7 @@ const PageWrapper = ({ children }) => {
             height: '100%',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between',
+            justifyContent: 'center',
           }}
         >
           <PageTitle />

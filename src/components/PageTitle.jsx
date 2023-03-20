@@ -21,7 +21,7 @@ const PageTitle = () => {
         textAlign: 'center',
         display: 'flex',
         justifyContent: 'center',
-        justifySelf: 'start',
+        mb: 5,
       }}
     >
       <Typography

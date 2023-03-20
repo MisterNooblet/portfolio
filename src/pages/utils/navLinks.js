@@ -9,12 +9,12 @@ const navLinks = [
         title: 'ABOUT ME',
         subTitle: 'ABOUT ME',
     },
-    {
-        name: 'Coding Skills',
-        path: '/skills',
-        title: 'MY CODING SKILLS',
-        subTitle: 'CODING SKILLS',
-    },
+    // {
+    //     name: 'Skills',
+    //     path: '/skills',
+    //     title: 'MY CODING SKILLS',
+    //     subTitle: 'CODING SKILLS',
+    // },
     {
         name: 'Resume',
         path: '/resume',

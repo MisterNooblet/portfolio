@@ -1,7 +1,12 @@
 import React from 'react';
+import PageWrapper from '../components/PageWrapper';
 
 const Contact = () => {
-  return <div>Contact</div>;
+  return (
+    <PageWrapper>
+      <div>Contact</div>
+    </PageWrapper>
+  );
 };
 
 export default Contact;
