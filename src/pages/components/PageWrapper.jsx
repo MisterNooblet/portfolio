@@ -1,6 +1,7 @@
 import { Box, Container } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import PageTitle from '../../components/PageTitle';
 import navLinks from '../utils/navLinks';
 
 const PageWrapper = ({ children }) => {
@@ -34,9 +35,10 @@ const PageWrapper = ({ children }) => {
             height: '100%',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'center',
+            justifyContent: 'space-between',
           }}
         >
+          <PageTitle />
           {children}
         </Container>
       </Box>
