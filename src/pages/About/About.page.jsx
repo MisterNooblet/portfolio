@@ -1,7 +1,14 @@
 import React from 'react';
+import PageTitle from '../../components/PageTitle';
+import PageWrapper from '../components/PageWrapper';
 
 const About = () => {
-  return <div>About</div>;
+  return (
+    <PageWrapper>
+      <PageTitle />
+      <div>About</div>
+    </PageWrapper>
+  );
 };
 
 export default About;

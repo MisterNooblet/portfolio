@@ -15,34 +15,7 @@ import logo from './assets/logo192.png';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { BsTelephoneOutbound } from 'react-icons/bs';
-
-const navLinks = [
-  {
-    name: 'Home',
-    path: '/',
-  },
-  {
-    name: 'About',
-    path: '/about',
-  },
-  {
-    name: 'Resume',
-    path: '/resume',
-  },
-  {
-    name: 'Portfolio',
-    path: '/portfolio',
-  },
-  {
-    name: 'Hobbies',
-    path: '/hobbies',
-  },
-  {
-    name: 'Contact',
-    path: '/contact',
-  },
-];
-
+import navLinks from '../../utils/navLinks';
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
@@ -120,7 +93,12 @@ const Navbar = () => {
             >
               {navLinks.map((link) => (
                 <MenuItem key={link.name} onClick={handleCloseNavMenu}>
-                  <NavLink to={link.path}>
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive, isPending }) =>
+                      isPending ? 'pending' : isActive ? 'active' : ''
+                    }
+                  >
                     <Typography textAlign="center" sx={{ color: 'black' }}>
                       {link.name}
                     </Typography>
@@ -155,9 +133,8 @@ const Navbar = () => {
             }}
           >
             {navLinks.map((link) => (
-              <NavLink to={link.path}>
+              <NavLink key={link.name} to={link.path}>
                 <Button
-                  key={link.name}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >

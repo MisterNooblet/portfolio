@@ -24,3 +24,6 @@ body {
   display: flex;
   flex-direction: column;
 }
+.active * {
+  color: #3cb35b !important;
+}

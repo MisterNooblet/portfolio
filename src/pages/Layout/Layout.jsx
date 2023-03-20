@@ -1,9 +1,12 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Box } from '@mui/material';
+import { TbCircleChevronDown, TbCircleChevronUp } from 'react-icons/tb';
+
+import navLinks from '../utils/navLinks';
 
 const theme = createTheme({
   palette: {
@@ -15,7 +18,8 @@ const theme = createTheme({
       main: '#f50057',
     },
     background: {
-      default: '#EDF1D6',
+      even: '#062444',
+      odd: '#03012c',
       paper: '#9DC08B',
     },
     text: {
@@ -26,6 +30,30 @@ const theme = createTheme({
 });
 
 const Layout = () => {
+  let location = useLocation();
+  const navigate = useNavigate();
+
+  const handlePageSwitch = (direction) => {
+    switch (direction) {
+      case 'up':
+        navigate(
+          navLinks[
+            navLinks.findIndex((item) => item.path === location.pathname) - 1
+          ].path
+        );
+        break;
+      case 'down':
+        navigate(
+          navLinks[
+            navLinks.findIndex((item) => item.path === location.pathname) + 1
+          ].path
+        );
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -36,8 +64,42 @@ const Layout = () => {
           flexDirection: 'column',
         }}
       >
-        <Navbar />
+        <Navbar navLinks={navLinks} />
+        {location.pathname !== '/' && (
+          <Box
+            sx={{
+              position: 'fixed',
+              top: '80px', // Height of the Navbar
+              left: '95%',
+              transform: 'translateX(-50%)',
+              color: 'text.secondary',
+              fontSize: { md: '5vmin', xs: '8vmin' },
+              cursor: 'pointer',
+              zIndex: 1, // Set a higher z-index to make it appear on top of Outlet
+            }}
+            onClick={() => handlePageSwitch('up')}
+          >
+            <TbCircleChevronUp />
+          </Box>
+        )}
+
         <Outlet />
+        {location.pathname !== '/contact' && (
+          <Box
+            sx={{
+              position: 'fixed',
+              bottom: '0',
+              left: '95%',
+              transform: 'translateX(-50%)',
+              color: 'text.secondary',
+              fontSize: { md: '5vmin', xs: '8vmin' },
+              cursor: 'pointer',
+            }}
+            onClick={() => handlePageSwitch('down')}
+          >
+            <TbCircleChevronDown />
+          </Box>
+        )}
       </Box>
     </ThemeProvider>
   );
